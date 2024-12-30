@@ -1,0 +1,53 @@
+.bio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bio {
+    text-align: center;
+    width: 60%;
+    /* font-size: 20px; */
+    font-size: calc(15px + 0.390625vw); 
+}
+.bio-svg-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+  .bio-svg {
+    fill: black;
+    position: absolute;
+    width: 90%;
+    translate: 5%;
+    /* height: 100%; */
+    left: 0;
+    pointer-events: none;
+    margin-bottom: 100px;
+  }
+  @media (max-width: 1100px) {
+    .bio-svg {
+      width: 100%;
+      translate: 0%;
+    }
+
+    .me {
+      font-size: 15px !important;
+    }
+  }
+@media (max-width: 910px) {
+    .bio-svg {
+        display: none;
+    }
+    .bio {
+        width: 90%;
+    }
+  }
+
+  .me {
+    font-size: calc(20px + 0.390625vw);
+    text-align: center;
+    cursor: default;
+  }
+ 

@@ -1,0 +1,14 @@
+.header {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+.header-text {
+    color: black;
+    position: absolute;
+    cursor: default;
+}
+.header-text-bold {
+    font-weight: bold;
+    font-size: 25px;
+}
