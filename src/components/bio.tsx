@@ -1,34 +1,13 @@
-import { useState, useEffect } from "react";
-
 import "../styles/bio.css";
 import LineBreak from "./lineBreak";
-import { motion, useScroll } from "framer-motion";
-import yt_logo from "../assets/images/yt-logo.png";
-const title = "About Me!";
+import { motion } from "framer-motion";
+import { Element } from "react-scroll";
+// import yt_logo from "../assets/images/yt-logo.png";
+import YoutubeLogo from "../svgComponents/YoutubeLogo.tsx";
+
+const title = "Who Am I?";
 
 const Bio: React.FC = () => {
-  const [marginTop, setMarginTop] = useState(0);
-  const { scrollYProgress } = useScroll();
-
-  // Function to update the margin
-  const updateMargin = () => {
-    const viewportHeight = window.innerHeight;
-    setMarginTop(viewportHeight + 50); // Add 50px extra margin for good measure
-  };
-
-  useEffect(() => {
-    // Update margin initially
-    updateMargin();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", updateMargin);
-
-    // Cleanup event listener on unmount
-    return () => {
-      window.removeEventListener("resize", updateMargin);
-    };
-  }, []);
-
   return (
     <>
       <motion.div
@@ -42,7 +21,7 @@ const Bio: React.FC = () => {
             return (
               <motion.h1
                 key={index}
-                style={{ marginTop: `${marginTop}px`, display: "inline-block" }}
+                style={{ display: "inline-block", marginTop: "1000px" }}
                 whileHover={{
                   y: -10,
                   rotate: rotateDirection,
@@ -59,8 +38,10 @@ const Bio: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
       >
+        <Element name="me" />
         <LineBreak marginTop={0} width={65} />
       </motion.div>
+
       <div className="bio-container">
         <hr className="line-divider" />
 
@@ -73,7 +54,8 @@ const Bio: React.FC = () => {
             <div className="yt-container">
               <p>Check out my</p>
               <a href="https://www.youtube.com/@ImSamKnight" target="_blank">
-                <img src={yt_logo} className="yt-logo" />
+                <YoutubeLogo className="yt_logo" />
+                {/* <img src={yt_logo} className="yt-logo" /> */}
               </a>
             </div>
           </div>

@@ -1,0 +1,65 @@
+.navbar-container {
+    position: fixed;
+    /* background-color: black;
+    width: 500px;;
+    height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    background-color: black;
+}
+.nav {
+    position: fixed;
+    background-color: black;
+    width: 500px;
+    flex: 1;
+    height: 50px;
+}
+.navbar { 
+    pointer-events: auto;
+    z-index: 500;
+    margin-right: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+    list-style-type: none;
+}
+.navbar li {
+    z-index: 500;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navbar li:nth-child(1):hover {
+    color: #E71D36;
+}
+.navbar li:nth-child(2):hover {
+    color: #c5d86d;
+}
+.navbar li:nth-child(3):hover {
+    color: #2ec4b6;
+}
+.navbar li:nth-child(4):hover {
+    color: #ff9f1c;
+}
+.navbar li:nth-child(5):hover {
+    color: #fff952;
+}
+.instagram-logo {
+    position: fixed;
+    margin-top: 14px;
+    margin-left: 30px;
+}
+.black-background {
+    position: fixed;
+    z-index: 0;
+    background-color: black;
+    width: 100%;
+    transform: scaleX(0.1);
+    height: 45px;
+}

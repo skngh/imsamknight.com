@@ -1,0 +1,82 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 17px;
+}
+.logo {
+    width: 800px;
+}
+.game-container {
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.star {
+    width: 100px;
+    image-rendering: pixelated;
+    z-index: -1;
+}
+.platform-container {
+    z-index: -1;
+    /* margin-top: 200px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    flex-direction: row;
+    margin-top: -5px;
+}
+.platform {
+    /* position: absolute; */
+    image-rendering: pixelated;
+    width: 250px;
+
+}
+.player-container {
+    z-index: -1;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 600px;
+    flex-direction: row;
+}
+.red_player {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+.player {
+    z-index: -1;
+    width: 130px;
+    image-rendering: pixelated;
+}
+.steam {
+    width: 100px;
+    position: absolute;
+    margin-top: 35px;
+    z-index: 0;
+}
+@media (max-width: 910px) {
+    .logo {
+        width: 80%;
+    }
+    .logo-container {
+        font-size: 14px;
+    }
+    .player {
+        width: 80px;
+    }
+    .platform {
+        width: 200px;
+    }
+    .star {
+        width: 50px;;
+    }
+}
