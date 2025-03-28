@@ -16,7 +16,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    overflow: hidden;
 }
 .star {
     width: 100px;
@@ -24,6 +24,7 @@
     z-index: -1;
 }
 .platform-container {
+    overflow: hidden;
     z-index: -1;
     /* margin-top: 200px; */
     display: flex;
@@ -34,12 +35,14 @@
     margin-top: -5px;
 }
 .platform {
+    
     /* position: absolute; */
     image-rendering: pixelated;
     width: 250px;
 
 }
 .player-container {
+    
     z-index: -1;
     margin-top: 200px;
     display: flex;
@@ -56,6 +59,7 @@
     z-index: -1;
     width: 130px;
     image-rendering: pixelated;
+    /* overflow: hidden; */
 }
 .steam {
     width: 100px;
