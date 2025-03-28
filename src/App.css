@@ -12,5 +12,6 @@ body {
   background-repeat: repeat;
   background-attachment: fixed;
   z-index: -1;
+  overflow-x: hidden;
 }
 
