@@ -63,9 +63,21 @@
 }
 .steam {
     width: 100px;
-    position: absolute;
-    margin-top: 35px;
+    position: relative;
+    
     z-index: 0;
+}
+.steam-container {
+    margin-top: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.steam-container p {
+    text-align: center;
 }
 @media (max-width: 910px) {
     .logo {
@@ -82,5 +94,14 @@
     }
     .star {
         width: 50px;;
+    }
+    .steam {
+        width: 70px;
+    }
+    .platform-container {
+        gap: 100px;
+    }
+    .player-container {
+        gap: 300px;
     }
 }

@@ -7,11 +7,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    z-index: 500;
     width: 100%;
     background-color: black;
 }
 .nav {
+    
     position: fixed;
+    display: inline-block;
     background-color: black;
     width: 500px;
     flex: 1;
@@ -20,8 +23,7 @@
 .navbar { 
     pointer-events: auto;
     z-index: 500;
-    margin-right: 50px;
-    
+    margin-right: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +32,7 @@
     list-style-type: none;
 }
 .navbar li {
+    position: relative;
     z-index: 500;
     color: white;
     cursor: pointer;
@@ -57,7 +60,7 @@
 }
 .black-background {
     position: fixed;
-    z-index: 0;
+    z-index: 500;
     background-color: black;
     width: 100%;
     transform: scaleX(0.1);

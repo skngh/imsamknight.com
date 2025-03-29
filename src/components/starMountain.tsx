@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/starMountain.css";
 import blue_player from "../assets/images/Blue_Player_1.png";
 import red_player from "../assets/images/Red_Player_1.png";
@@ -10,10 +10,18 @@ import steam from "../assets/images/steam.png";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const StarMountain: React.FC = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 767) {
+      setIsMobile(true);
+    }
+  });
+
   const targetRef = useRef(null);
   const { scrollYProgress: scrollYProgress_x } = useScroll({
     target: targetRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", isMobile ? "end center" : "end start"],
   });
 
   const { scrollYProgress: scrollYProgress_y } = useScroll({
@@ -21,11 +29,19 @@ const StarMountain: React.FC = () => {
     offset: ["start center", "end .3"],
   });
 
-  const redPlayerX = useTransform(scrollYProgress_x, [0, 1], [0, 300]);
-  const bluePlayerX = useTransform(scrollYProgress_x, [0, 1], [0, -300]);
-
   const redPlayerY = useTransform(scrollYProgress_y, [0, 1], [0, -200]);
   const bluePlayerY = useTransform(scrollYProgress_y, [0, 1], [0, -200]);
+
+  const redPlayerX = useTransform(
+    scrollYProgress_x,
+    [0, 1],
+    [0, isMobile ? 80 : 300]
+  );
+  const bluePlayerX = useTransform(
+    scrollYProgress_x,
+    [0, 1],
+    [0, isMobile ? -80 : -300]
+  );
 
   return (
     <div>
@@ -53,21 +69,27 @@ const StarMountain: React.FC = () => {
           <img className="star" src={star}></img>
         </motion.div>
         <div className="player-container">
-          <motion.div ref={targetRef} style={{ x: redPlayerX, y: redPlayerY }}>
+          <motion.div
+            ref={targetRef}
+            style={{ x: redPlayerX, y: isMobile ? 0 : redPlayerY }}
+          >
             <img className="red_player player" src={red_player}></img>
           </motion.div>
-          <motion.div style={{ x: bluePlayerX, y: bluePlayerY }}>
+          <motion.div style={{ x: bluePlayerX, y: isMobile ? 0 : bluePlayerY }}>
             <img className="blue_player player" src={blue_player}></img>
           </motion.div>
         </div>
-        <a
-          className="steam"
-          href="https://store.steampowered.com/app/2938920/Star_Mountain/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img className="steam" src={steam} />
-        </a>
+        <div className="steam-container">
+          <a
+            className="steam"
+            href="https://store.steampowered.com/app/2938920/Star_Mountain/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img className="steam" src={steam} />
+          </a>
+          <p>wishlist now</p>
+        </div>
       </div>
       <div className="platform-container">
         <motion.div

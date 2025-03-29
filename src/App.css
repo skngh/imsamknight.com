@@ -2,19 +2,17 @@ body {
   margin: 0 auto;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   overflow-x: hidden;
-  /* background-image: url(assets/textures/asfalt.png); */
-  /* background-image: url(assets/textures/debut.png); */
   background-image: url(assets/textures/egg-shell.png);
-  /* background-image: url(assets/textures/brilliant.png); */
-  /* background-image: url(assets/textures/cardboard.png); */
-  /* background-image: url(assets/textures/cloth-alike.png); */
-  /* background-image: url(assets/textures/cream-paper.png);  */
   background-repeat: repeat;
   background-attachment: fixed;
-  z-index: -1;
-  overflow-x: hidden;
 }
 html {
   overflow-x: hidden;
 }
+.credit {
+  /* position: absolute; */
+  
+  text-align: right;
+  margin-right: 20px;
 
+}

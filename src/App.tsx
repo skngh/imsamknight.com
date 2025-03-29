@@ -8,9 +8,18 @@ import Bio from "./components/bio.tsx";
 import Arrow from "./components/arrow.tsx";
 import NavBar from "./components/navBar.tsx";
 import StarMountain from "./components/starMountain.tsx";
-import Reels from "./components/Work.tsx";
+import Work from "./components/Work.tsx";
+import Contact from "./components/contact.tsx";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 767) {
+      setIsMobile(true);
+    }
+  });
   return (
     <>
       <Element name="home">
@@ -43,8 +52,12 @@ function App() {
       <StarMountain />
 
       <LineBreak marginTop={200} width={90} />
-      <Reels />
-      <LineBreak marginTop={3000} width={90} />
+      <Element name="work" />
+      <Work />
+      <LineBreak marginTop={200} width={90} />
+      <Element name="contact" />
+      <Contact />
+      <p className="credit">site by me</p>
     </>
   );
 }

@@ -5,3 +5,9 @@
     font-size: 10vw;
     cursor: default;
 }
+@media (max-width: 767px) {
+   .name-title {
+
+    margin-top: 100px;
+   }
+}

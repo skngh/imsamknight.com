@@ -67,18 +67,18 @@ const Bio: React.FC = () => {
         >
           <div className="bio-border">
             <p className="bio">
-              Hello! My name is Sam Knight, blah blah blah blah blah blah blah
-              blah ablha asd blah blah blah blah blah blah blah blah ablha asd
-              blah blah blah blah blah blah blah blah ablha asd blah blah blah
-              blah blah blah blah blah ablha asd blah blah blah blah blah blah
-              blah blah ablha asd blah blah blah blah blah blah blah blah ablha
+              Hello! Sam knight, blah blah blah blah blah blah blah blah ablha
               asd blah blah blah blah blah blah blah blah ablha asd blah blah
               blah blah blah blah blah blah ablha asd blah blah blah blah blah
               blah blah blah ablha asd blah blah blah blah blah blah blah blah
               ablha asd blah blah blah blah blah blah blah blah ablha asd blah
               blah blah blah blah blah blah blah ablha asd blah blah blah blah
               blah blah blah blah ablha asd blah blah blah blah blah blah blah
-              blah ablha asd blah blah blah blah blah blah bla.
+              blah ablha asd blah blah blah blah blah blah blah blah ablha asd
+              blah blah blah blah blah blah blah blah ablha asd blah blah blah
+              blah blah blah blah blah ablha asd blah blah blah blah blah blah
+              blah blah ablha asd blah blah blah blah blah blah blah blah ablha
+              asd blah blah blah blah blah blah bla.
             </p>
           </div>
         </motion.div>
