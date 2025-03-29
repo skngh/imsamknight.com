@@ -83,7 +83,11 @@
       gap: 8px;               /* Smaller gap for smaller screens */
     }
     input {
-        width: 18vh;
+        /* width: 38vh; */
+        min-width: 130px;
+        max-width: 50vw;
+
+
     }
     textarea {
         min-width: 80vw;

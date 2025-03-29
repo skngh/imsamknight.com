@@ -2,12 +2,32 @@ import "../styles/bio.css";
 import LineBreak from "./lineBreak";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
-// import yt_logo from "../assets/images/yt-logo.png";
 import YoutubeLogo from "../svgComponents/YoutubeLogo.tsx";
+import { useEffect, useState } from "react";
 
 const title = "Who Am I?";
 
 const Bio: React.FC = () => {
+  const [marginTop, setMarginTop] = useState(0);
+
+  // Function to update the margin
+  const updateMargin = () => {
+    const viewportHeight = window.innerHeight;
+    setMarginTop(viewportHeight - 150); // Add 50px extra margin for good measure
+  };
+
+  useEffect(() => {
+    // Update margin initially
+    updateMargin();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateMargin);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", updateMargin);
+    };
+  }, []);
   return (
     <>
       <motion.div
@@ -21,7 +41,7 @@ const Bio: React.FC = () => {
             return (
               <motion.h1
                 key={index}
-                style={{ display: "inline-block", marginTop: "1000px" }}
+                style={{ marginTop: `${marginTop}px`, display: "inline-block" }}
                 whileHover={{
                   y: -10,
                   rotate: rotateDirection,

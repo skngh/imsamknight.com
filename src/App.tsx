@@ -10,16 +10,8 @@ import NavBar from "./components/navBar.tsx";
 import StarMountain from "./components/starMountain.tsx";
 import Work from "./components/Work.tsx";
 import Contact from "./components/contact.tsx";
-import { useEffect, useState } from "react";
 
 function App() {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (window.innerWidth < 767) {
-      setIsMobile(true);
-    }
-  });
   return (
     <>
       <Element name="home">
@@ -46,7 +38,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <LineBreak marginTop={600} width={65} />
+        <LineBreak marginTop={200} width={65} />
       </motion.div>
       <Element name="game" />
       <StarMountain />

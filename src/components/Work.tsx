@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/work.css";
 import Tilt from "react-parallax-tilt";
 import { motion } from "motion/react";
@@ -23,10 +23,14 @@ const workItems = [
     caption: "This is an image",
   },
   {
-    title: "Synthux Content Finalist",
+    title: (
+      <>
+        'Playtest'<br></br> Game Jam Submission<br></br> Finalist
+      </>
+    ),
     image: "../assets/work/sond.png",
-    video: "https://www.youtube.com/embed/vAcQFwvVuao?si=MGfHNIUVdtel1iGX",
-    description: "did good heres github lkjhasdflkjhasdfkljhasdlfkjhasdklfj",
+    video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
+    description: "got 9th balhasdlfhasdf",
     caption: "This is an image",
   },
   {
@@ -42,14 +46,10 @@ const workItems = [
     caption: "This is an image",
   },
   {
-    title: (
-      <>
-        'Playtest'<br></br> Game Jam Submission<br></br> Finalist
-      </>
-    ),
+    title: "Synthux Content Finalist",
     image: "../assets/work/sond.png",
-    video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
-    description: "got 9th balhasdlfhasdf",
+    video: "https://www.youtube.com/embed/vAcQFwvVuao?si=MGfHNIUVdtel1iGX",
+    description: "did good heres github lkjhasdflkjhasdfkljhasdlfkjhasdklfj",
     caption: "This is an image",
   },
   {
