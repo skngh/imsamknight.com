@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../styles/work.css";
 import Tilt from "react-parallax-tilt";
 import { motion } from "motion/react";
@@ -49,7 +49,8 @@ const workItems = [
     title: "Synthux Content Finalist",
     image: "../assets/work/sond.png",
     video: "https://www.youtube.com/embed/vAcQFwvVuao?si=MGfHNIUVdtel1iGX",
-    description: "did good heres github lkjhasdflkjhasdfkljhasdlfkjhasdklfj",
+    description:
+      "did good heres github lkj hasdfl kjhasd fkljh asdlfk jha sdklfj",
     caption: "This is an image",
   },
   {
@@ -72,6 +73,11 @@ const workItems = [
 const Work: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const { ref, inView } = useInView();
+  const gridRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToElement = () => {
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   useEffect(() => {
     if (!inView) {
@@ -82,7 +88,9 @@ const Work: React.FC = () => {
   return (
     <>
       <div className="grid-container">
-        <h1>work</h1>
+        <h1 ref={gridRef} className="work-title">
+          work
+        </h1>
         <div className={`${selectedIndex !== null ? "grid-hidden" : "grid"}`}>
           <AnimatePresence>
             {selectedIndex === null &&
@@ -94,7 +102,10 @@ const Work: React.FC = () => {
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.2, delay: index * 0.05 }}
                   exit={{ x: -100, opacity: 0 }}
-                  onClick={() => setSelectedIndex(index)}
+                  onClick={() => {
+                    setSelectedIndex(index);
+                    scrollToElement();
+                  }}
                 >
                   <Tilt
                     tiltMaxAngleX={5}
@@ -104,54 +115,53 @@ const Work: React.FC = () => {
                     className={`grid-item ${(index + 1).toString()}`}
                   >
                     <p>{item.title}</p>
-                    {/* <img src={item.image} alt={item.title} /> */}
                   </Tilt>
                 </motion.div>
               ))}
           </AnimatePresence>
         </div>
         {/* Expanded view! */}
-        <AnimatePresence>
-          {selectedIndex !== null && (
+        {selectedIndex !== null && (
+          <Tilt tiltMaxAngleX={1} tiltMaxAngleY={1} tiltReverse={true}>
             <motion.div
-              className="expanded-view"
+              className="expanded-content-container"
               initial={{ opacity: 0, scale: 0.2 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
               ref={ref} // Attach the ref to the expanded view div
             >
-              <Tilt tiltMaxAngleX={1} tiltMaxAngleY={1} tiltReverse={true}>
-                <div className="expanded-content expanded-grid-item">
-                  <img src={Thumbtack} alt="thumbtack" className="thumbtack" />
-                  <h2 className="expanded-title expanded-grid-item">
-                    {workItems[selectedIndex].title}
-                  </h2>
-                  <div className="expanded-description expanded-grid-item">
-                    <p>{workItems[selectedIndex].description}</p>
-                  </div>
-
-                  <img
-                    onClick={() => setSelectedIndex(null)}
-                    src={BackArrow}
-                    className="close"
-                  ></img>
+              <div className="expanded-top-section">
+                <img
+                  onClick={() => setSelectedIndex(null)}
+                  src={BackArrow}
+                  className="close"
+                ></img>
+                <h2 className="expanded-title">
+                  {workItems[selectedIndex].title}
+                </h2>
+                <img src={Thumbtack} alt="thumbtack" className="thumbtack" />
+              </div>
+              <div className="expanded-vid-desc-container">
+                <div className="expanded-vid-container">
                   <iframe
-                    className="expanded-video expanded-grid-item"
-                    width="560"
-                    height="315"
+                    className="expanded-video"
                     src={workItems[selectedIndex].video}
                     title="YouTube video player"
                     allowFullScreen
                   ></iframe>
-                  <p className="expanded-caption expanded-grid-item">
+                  <p className="expanded-caption">
                     {workItems[selectedIndex].caption}
                   </p>
                 </div>
-              </Tilt>
+                <div className="expanded-description-container">
+                  <p className="expanded-description">
+                    {workItems[selectedIndex].description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </Tilt>
+        )}
       </div>
     </>
   );

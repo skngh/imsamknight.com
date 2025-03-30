@@ -34,19 +34,32 @@ function App() {
 
       <Bio />
       <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2 }}
+        initial={{ opacity: 0, x: 1000 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
       >
         <LineBreak marginTop={200} width={65} />
       </motion.div>
       <Element name="game" />
       <StarMountain />
 
-      <LineBreak marginTop={200} width={90} />
+      <motion.div
+        initial={{ opacity: 0, x: -1000 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
+      >
+        <LineBreak marginTop={200} width={90} />
+      </motion.div>
       <Element name="work" />
       <Work />
-      <LineBreak marginTop={200} width={90} />
+      <motion.div
+        initial={{ opacity: 0, x: 1000 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
+      >
+        <LineBreak marginTop={200} width={90} />
+      </motion.div>
+
       <Element name="contact" />
       <Contact />
       <p className="credit">site by me</p>

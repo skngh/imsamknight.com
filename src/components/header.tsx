@@ -4,7 +4,7 @@ import "../styles/header.css";
 
 const BoldText = ["Sound designer, Audio programmer, Game developer"];
 const NormalText = [
-  "Musician, Unity, Wwise, Pure data, MaxMSP, Ableton, DaisySP, Web Developer, Drummer, Composer, Synth Lover, Youtuber",
+  "Musician, Unity, Wwise, Pure data, MaxMSP, Ableton, Daisy Seed, Web Developer, Drummer, Composer, Synth Lover, Youtuber",
 ];
 
 const Header: React.FC = () => {
