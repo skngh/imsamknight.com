@@ -30,7 +30,12 @@
     gap: 16px; 
   }
   button {
+    appearance: none;
+    -webkit-appearance: none;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
     border-radius: 10px;
     width: 90px;
@@ -39,6 +44,7 @@
     font-family: Menlo, Monaco, 'Courier New', monospace;
     cursor: pointer;
     transition: all .3s ease;
+    background-color: transparent;
   }
   
   

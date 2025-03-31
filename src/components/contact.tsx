@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
                 isSubmitted ? "text submitted-button" : "text un submit-button"
               }
               type="submit"
-              disabled={isSubmitted} // Disable the button if submitted
+              disabled={isSubmitted}
             >
               {isSubmitted ? "Sent" : "Submit"}{" "}
               {/* Change text based on submission state */}
