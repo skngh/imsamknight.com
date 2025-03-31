@@ -7,17 +7,25 @@ import { useInView } from "react-intersection-observer";
 import Thumbtack from "../assets/images/thumbtack.png";
 import BackArrow from "../assets/images/arrow.svg";
 
+import SoundDesignReelImg from "../assets/images/work/SoundDesignReel.jpg";
+import TechSoundDesignReelImg from "../assets/images/work/techSoundDesignReel.jpg";
+import PlaytestImg from "../assets/images/work/Playtest.jpg";
+import SketchavenImg from "../assets/images/work/Sketchaven.jpg";
+import SynthuxImg from "../assets/images/work/Synthux.jpg";
+import SampleInstrumentImg from "../assets/images/work/SampleInstruments.jpg";
+import SondImg from "../assets/images/work/Sond.jpg";
+
 const workItems = [
   {
     title: "Sound Design Reel",
-    image: "../assets/work/sond.png",
+    image: SoundDesignReelImg,
     video: "https://www.youtube.com/embed/EEg5ZbuqvK0?si=qqgmgHbiW-DZMsF3",
     description: "sound design reel yayayayay.",
     caption: "This is an image",
   },
   {
     title: "Technical Sound Design Reel",
-    image: "../assets/work/sond.png",
+    image: TechSoundDesignReelImg,
     video: "https://www.youtube.com/embed/TjgbCqKEVuo?si=NTHVAjj5eyh6diuV",
     description: "Technical sound design reel woo",
     caption: "This is an image",
@@ -28,7 +36,7 @@ const workItems = [
         'Playtest'<br></br> Game Jam Submission<br></br> Finalist
       </>
     ),
-    image: "../assets/work/sond.png",
+    image: PlaytestImg,
     video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
     description: "got 9th balhasdlfhasdf",
     caption: "This is an image",
@@ -36,10 +44,10 @@ const workItems = [
   {
     title: (
       <>
-        Sketchaven Capstone: <br></br> Procedural Audio in Pure Data w Unity
+        Sketchaven Capstone: <br></br> Procedural Audio in Pure Data
       </>
     ),
-    image: "../assets/work/sond.png",
+    image: SketchavenImg,
     video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -47,7 +55,7 @@ const workItems = [
   },
   {
     title: "Synthux Content Finalist",
-    image: "../assets/work/sond.png",
+    image: SynthuxImg,
     video: "https://www.youtube.com/embed/vAcQFwvVuao?si=MGfHNIUVdtel1iGX",
     description:
       "did good heres github lkj hasdfl kjhasd fkljh asdlfk jha sdklfj",
@@ -55,15 +63,15 @@ const workItems = [
   },
   {
     title: "Sample Instruments",
-    image: "../assets/work/sond.png",
+    image: SampleInstrumentImg,
     video: "https://www.pianobook.co.uk/profile/skngh/",
     description: "got 9th balhasdlfhasdf",
     caption: "This is an image",
   },
 
   {
-    title: "Daisy Seed Instruments",
-    image: "../assets/work/sond.png",
+    title: "Past Company Work Showcase",
+    image: SondImg,
     video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
     description: "did this that this that glove vcooll",
     caption: "This is an image",
@@ -112,7 +120,9 @@ const Work: React.FC = () => {
                     tiltMaxAngleY={5}
                     tiltReverse={true}
                     key={index}
+                    scale={1.08}
                     className={`grid-item ${(index + 1).toString()}`}
+                    style={{ backgroundImage: `url(${item.image})` }}
                   >
                     <p>{item.title}</p>
                   </Tilt>

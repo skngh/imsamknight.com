@@ -1,5 +1,6 @@
 .work-title {
     scroll-margin-top: 250px;
+    font-size: 50px;
 }
 .grid-container {
     display: flex;
@@ -39,21 +40,45 @@
     align-items: center;
     text-align: center;
     border: 1px solid black;
-    filter: brightness(100%);
+    /* filter: brightness(100%); */
     transition: all .3s ease;
+    background-size: 100% auto;
+    background-position: center;
+}
+.grid-item::before {
+    content: ''; /* Necessary for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Inherits the background from .grid-item */
+    border-radius: inherit; /* Keeps the border radius */
+    z-index: -1;  /* Places it behind the text */
+    transition: filter .3s ease;
+  }
+.grid-item:hover::before {
+    -webkit-filter: brightness (50%);
+    filter: brightness(50%);
 }
 .grid-hidden {
     display: none;
 }
 .grid-item:hover {
-    -webkit-filter: brightness (80%);
-    filter: brightness(80%);
+    
     cursor: pointer;
 }
 .grid-item p {
+    width: 100%;
+    font-size: clamp(12px, 2em, 4em);
+    /* font-size: 4em; */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
     position: absolute;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    z-index: 300;
 }
 .grid-item:hover p {
     opacity: 1;
@@ -63,9 +88,11 @@
 }
 .\32 {
     grid-area: two;
+
 }
 .\33 {
     grid-area: three;
+
 }
 .\34 {
     grid-area: four;
@@ -194,9 +221,15 @@
     .work-title {
         scroll-margin-top: 100px;
     }
+    .grid-item p {
+        font-size: 20px;
+    }
     
   }
   @media (max-width: 900px) {
+    .work-title {
+        font-size: 40px;
+    }
     .expanded-content-container {
         width: 70vw;
         /* height: 800px; */

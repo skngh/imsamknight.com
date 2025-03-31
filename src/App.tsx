@@ -34,7 +34,7 @@ function App() {
 
       <Bio />
       <motion.div
-        initial={{ opacity: 0, x: 1000 }}
+        initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.2, delay: 0.2 }}
       >
@@ -44,7 +44,7 @@ function App() {
       <StarMountain />
 
       <motion.div
-        initial={{ opacity: 0, x: -1000 }}
+        initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.2, delay: 0.2 }}
       >
@@ -53,7 +53,7 @@ function App() {
       <Element name="work" />
       <Work />
       <motion.div
-        initial={{ opacity: 0, x: 1000 }}
+        initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.2, delay: 0.2 }}
       >
