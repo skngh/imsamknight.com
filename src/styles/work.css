@@ -205,7 +205,7 @@
   }
   @media (max-width: 768px) {
     .grid {
-        grid-template-rows: 2fr repeat(8, 1fr);
+        grid-template-rows: 2fr 2fr repeat(7, 1fr);
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
             'one one' 
@@ -214,9 +214,9 @@
             'two two'
             'three four'
             'three four' 
-            'six seven'
-            'six seven'
-            'five five'
+            'six five'
+            'six five'
+            'seven seven'
     }
     .work-title {
         scroll-margin-top: 100px;
