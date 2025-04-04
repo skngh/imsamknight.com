@@ -14,21 +14,98 @@ import SketchavenImg from "../assets/images/work/Sketchaven.jpg";
 import SynthuxImg from "../assets/images/work/Synthux.jpg";
 import SampleInstrumentImg from "../assets/images/work/SampleInstruments.jpg";
 import SondImg from "../assets/images/work/Sond.jpg";
+import PianobookImg from "../assets/images/work/pianobook.jpg";
+import PlaytestExpandedImg from "../assets/images/work/playtestExpanded.jpg";
+
+const soundDesignClips = [
+  {
+    title: "Tunic",
+    video: "https://www.youtube.com/watch?v=LqAo_rQd0Cg",
+  },
+  {
+    title: "Apex",
+    video: "https://www.youtube.com/watch?v=OOoeZZTVFlw",
+  },
+  {
+    title: "League",
+    video: "https://www.youtube.com/watch?v=kUXGrfBIeFc",
+  },
+  {
+    title: "Short Hike",
+    video: "https://www.youtube.com/watch?v=lvKFGIun-oY",
+  },
+];
+const technicalSoundDesignClips = [
+  {
+    title: "Wwise Demo",
+    video: "https://www.youtube.com/watch?v=fmQ3c8ieW7Q",
+  },
+  {
+    title: "Procedural Audio Demo",
+    video: "https://www.youtube.com/watch?v=tBw2P-vV5Hc",
+  },
+  {
+    title: "Audio Impl. Demo",
+    video: "https://www.youtube.com/watch?v=E0mIqBWZsFk",
+  },
+  {
+    title: "Game Jam Demo",
+    video: "https://www.youtube.com/watch?v=8S1MJN3MteY",
+  },
+];
 
 const workItems = [
   {
     title: "Sound Design Reel",
     image: SoundDesignReelImg,
-    video: "https://www.youtube.com/embed/EEg5ZbuqvK0?si=qqgmgHbiW-DZMsF3",
-    description: "sound design reel yayayayay.",
-    caption: "This is an image",
+    video: "https://www.youtube.com/embed/vuk9DfjGQR8?si=dYwsWz0HX2K0K99G",
+    description: (
+      <>
+        Featuring sound redesign clips from games including Tunic, Apex Legends,
+        A Short Hike, and League of Legends. You can check out full breakdowns
+        for each clip here:
+        <div className="sound-design-clips-container">
+          {soundDesignClips.map((clip, index) => (
+            <a
+              key={index}
+              href={clip.video}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sound-design-clip"
+            >
+              {clip.title}
+            </a>
+          ))}
+        </div>
+      </>
+    ),
+    caption: "Watch above!",
   },
   {
     title: "Technical Sound Design Reel",
     image: TechSoundDesignReelImg,
-    video: "https://www.youtube.com/embed/TjgbCqKEVuo?si=NTHVAjj5eyh6diuV",
-    description: "Technical sound design reel woo",
-    caption: "This is an image",
+    video: "https://www.youtube.com/embed/FwxL9yEaBcg?si=HxCztNC_rPU0NE1B",
+    description: (
+      <>
+        Featuring audio implementation demos including with Wwise, Unity, and
+        procedural audio in Pure Data. All games except the Wwise demo were made
+        by me in Unity. Check out full walthroughs here:
+        <div className="sound-design-clips-container">
+          {technicalSoundDesignClips.map((clip, index) => (
+            <a
+              key={index}
+              href={clip.video}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sound-design-clip"
+            >
+              {clip.title}
+            </a>
+          ))}
+        </div>
+      </>
+    ),
+    caption: "Watch above!",
   },
   {
     title: (
@@ -37,9 +114,27 @@ const workItems = [
       </>
     ),
     image: PlaytestImg,
-    video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
-    description: "got 9th balhasdlfhasdf",
-    caption: "This is an image",
+    expandedLink: "https://skngh.itch.io/playtest",
+    expandedImage: PlaytestExpandedImg,
+    description: (
+      <>
+        'Playtest' was a game made for Brackeys 2022.1 Game Jam. I made it solo
+        over the course of 1 week in Unity. It placed 10th out of 1,578 entries,
+        and 9th in Audio. You can check out its itch.io page by clicking the
+        image, and a playthrough of the game below!
+        <div className="sound-design-clips-container">
+          <a
+            href="https://www.youtube.com/watch?v=8S1MJN3MteY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sound-design-clip"
+          >
+            Playthrough
+          </a>
+        </div>
+      </>
+    ),
+    caption: "Click above for itch.io",
   },
   {
     title: (
@@ -48,33 +143,62 @@ const workItems = [
       </>
     ),
     image: SketchavenImg,
-    video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    caption: "This is an image",
+    video: "https://www.youtube.com/embed/tBw2P-vV5Hc?si=swu7FHsVXIStAjqI",
+    description: (
+      <>
+        'Sketchaven' is a game I made as my capstone for Berklee. My main
+        exploration with it was having fully procedural audio using Pure data,
+        directly integrated into Unity. It took lots of deeper sound design
+        study, mainly using Andy Farnell's book, <em>Designing Sound.</em> You
+        can check out a full explanation of it in the adjacent video.
+      </>
+    ),
+    caption: "Watch above!",
   },
   {
     title: "Synthux Content Finalist",
     image: SynthuxImg,
-    video: "https://www.youtube.com/embed/vAcQFwvVuao?si=MGfHNIUVdtel1iGX",
-    description:
-      "did good heres github lkj hasdfl kjhasd fkljh asdlfk jha sdklfj",
-    caption: "This is an image",
+    video: "https://www.youtube.com/embed/vAcQFwvVuao?si=tPzQUw8fCS3XE0tl",
+    description: (
+      <>
+        In 2023 I particpated in Synthux Academy's, 'Synthmas 2023' contest. The
+        challenge was to design a touch-controlled synth using the Daisy Seed
+        and their 'Simple Touch' prototype board. I decided to make a sort of
+        'modular synth' using each touch pad as a different module. My project
+        got 2nd in the contest. You can check out a demo of it in the adjacent
+        video, and the github repo below.
+        <div className="sound-design-clips-container">
+          <a
+            href="https://github.com/skngh/ModularTouchSynth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sound-design-clip"
+          >
+            Github
+          </a>
+        </div>
+      </>
+    ),
+
+    caption: "Watch above!",
   },
   {
     title: "Sample Instruments",
     image: SampleInstrumentImg,
-    video: "https://www.pianobook.co.uk/profile/skngh/",
-    description: "got 9th balhasdlfhasdf",
-    caption: "This is an image",
+    expandedImage: PianobookImg,
+    expandedLink: "https://www.pianobook.co.uk/profile/skngh/",
+    description:
+      "One of my favorite sound design outlets is creating sample instruments! It was something I used to do much more often while at school, since I had a big range of instruments available to me. I post  my instruments on Pianobook, a site geared towards community made instruments, where they've gotten 10,000+ combined downloads! Check it out by clicking the adjacent photo. ",
+    caption: "Click above!",
   },
 
   {
     title: "Past Company Work Showcase",
     image: SondImg,
-    video: "https://www.youtube.com/embed/JYDAor1Wx60?si=IL9GkICX1BMrCP4U",
-    description: "did this that this that glove vcooll",
-    caption: "This is an image",
+    video: "https://www.youtube.com/embed/M5WmvgBfPoA?si=X7D7KO8lSbZnWBLW",
+    description:
+      "I previously worked for a startup company (that is in stealth so I cannot say the name) that is making an app to help you sleep better with audio. I was a full-time content producer for the company where I made 200+ tracks over the course of 1.5 years. My work included sleep tracks, immersive soundscapes, and sleep stories. I also wrote some procedural audio code and a generative soundscape feature using AI for the company.  Linked is a showreel of some of the tracks I made!",
+    caption: "Watch above!",
   },
 ];
 
@@ -138,7 +262,7 @@ const Work: React.FC = () => {
               initial={{ opacity: 0, scale: 0.2 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              ref={ref} // Attach the ref to the expanded view div
+              ref={ref}
             >
               <div className="expanded-top-section">
                 <img
@@ -153,12 +277,34 @@ const Work: React.FC = () => {
               </div>
               <div className="expanded-vid-desc-container">
                 <div className="expanded-vid-container">
-                  <iframe
-                    className="expanded-video"
-                    src={workItems[selectedIndex].video}
-                    title="YouTube video player"
-                    allowFullScreen
-                  ></iframe>
+                  {workItems[selectedIndex].video ? (
+                    <iframe
+                      className="expanded-video"
+                      src={workItems[selectedIndex].video}
+                      title="YouTube video player"
+                      style={{ width: 250, height: 200 }}
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <a
+                      href={workItems[selectedIndex].expandedLink}
+                      target="_blank"
+                    >
+                      <div
+                        className="expanded-video expanded-img"
+                        style={{
+                          width: 200,
+                          height: 200,
+                          backgroundImage: `url(${
+                            workItems[selectedIndex].expandedImage
+                              ? workItems[selectedIndex].expandedImage
+                              : workItems[selectedIndex].image
+                          })`,
+                        }}
+                      ></div>
+                    </a>
+                  )}
+
                   <p className="expanded-caption">
                     {workItems[selectedIndex].caption}
                   </p>

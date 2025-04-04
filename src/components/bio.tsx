@@ -60,7 +60,7 @@ const Bio: React.FC = () => {
         transition={{ duration: 0.2, delay: 0.2 }}
       >
         <Element name="me" />
-        <LineBreak marginTop={0} width={65} />
+        <LineBreak marginTop={0} width={90} />
       </motion.div>
 
       <div className="bio-container">
@@ -88,18 +88,17 @@ const Bio: React.FC = () => {
         >
           <div className="bio-border">
             <p className="bio">
-              Hello! Sam knight, blah blah blah blah blah blah blah blah ablha
-              asd blah blah blah blah blah blah blah blah ablha asd blah blah
-              blah blah blah blah blah blah ablha asd blah blah blah blah blah
-              blah blah blah ablha asd blah blah blah blah blah blah blah blah
-              ablha asd blah blah blah blah blah blah blah blah ablha asd blah
-              blah blah blah blah blah blah blah ablha asd blah blah blah blah
-              blah blah blah blah ablha asd blah blah blah blah blah blah blah
-              blah ablha asd blah blah blah blah blah blah blah blah ablha asd
-              blah blah blah blah blah blah blah blah ablha asd blah blah blah
-              blah blah blah blah blah ablha asd blah blah blah blah blah blah
-              blah blah ablha asd blah blah blah blah blah blah blah blah ablha
-              asd blah blah blah blah blah blah bla.
+              Hey! I’m Sam Knight a 23 year old sound designer, game developer,
+              and creative coder based in Brooklyn, NY. My expertise lies
+              between interactive audio, game development, and hardware design,
+              creating whatever I can from games to custom-built music tools.
+              <br></br>
+              <br></br>I studied Electronic Production & Design at Berklee
+              College of Music, where I found my love for blending technology
+              and creativity. I never stop working on new projects, learning new
+              softwares, or improving my current skills. I'm always looking to
+              get in touch with those interseted in similar pursuits, so feel
+              free to contact me below!
             </p>
           </div>
         </motion.div>

@@ -72,9 +72,11 @@
     }
     .navbar li {
         font-size: 14px;
+        margin-top: 3px;
     }
     .instagram-logo {
-        margin-left: 80px;
+        margin-left: 89px;
         height: 20px;
+        margin-top: 16px;
     }
 }
