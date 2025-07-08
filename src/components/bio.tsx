@@ -88,7 +88,7 @@ const Bio: React.FC = () => {
         >
           <div className="bio-border">
             <p className="bio">
-              Hey! I’m Sam Knight a 23 year old sound designer, game developer,
+              Hey! I’m Sam Knight a 24 year old sound designer, game developer,
               and creative coder based in Brooklyn, NY. My expertise lies
               between interactive audio, game development, and hardware design,
               creating whatever I can from games to custom-built music tools.
