@@ -54,7 +54,7 @@ const StarMountain: React.FC = () => {
         >
           <img className="logo" src={star_logo}></img>
           <p>
-            A 1v1 online/local multiplayer platforming game. <br />
+            An online/local multiplayer PvP platforming game. <br />
             Made in Unity, released on Steam.
           </p>
         </motion.div>
